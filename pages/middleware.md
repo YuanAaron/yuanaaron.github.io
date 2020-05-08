@@ -1,9 +1,9 @@
 ---
 layout: page
 title: Spring家族的实践与思考
-menu: Spring全家桶
+menu: 中间件
 css: ['blog-page.css']
-permalink: /spring
+permalink: /middleware
 ---
 
 {% include middleware.html %}

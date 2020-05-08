@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Java技术栈
-menu: Java/Jvm
+menu: Java/Spring
 css: ['blog-page.css']
 permalink: /java
 ---
