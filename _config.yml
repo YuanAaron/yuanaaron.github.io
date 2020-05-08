@@ -103,13 +103,17 @@ navs:
     label: Java/Spring
     target: _self
     subnav:
-      - subHref: /java-all/basic.html
+      - 
+        subHref: /java-all/basic.html
         subLabel: 编程基础
-      - subHref: /java-all/sourcecode.html
+      - 
+        subHref: /java-all/sourcecode.html
         subLabel: 源码分析
-      - subHref: /java-all/jvm.html
+      - 
+        subHref: /java-all/jvm.html
         subLabel: JVM
-      — subHref: /java-all/spring-all.html
+      -
+        subHref: /java-all/spring-all.html
         subLabel: Spring全家桶
 
   -
@@ -125,8 +129,7 @@ navs:
   -
     href: /archives.html
     label: Archives
-    target: _self
-
+    target: _sel
 
 # labels. my blog key words
 labels:
