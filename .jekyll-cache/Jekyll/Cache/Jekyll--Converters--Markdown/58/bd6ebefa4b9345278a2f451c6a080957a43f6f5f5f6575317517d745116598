@@ -1,0 +1,248 @@
+I"=!<h1 id="creational创建模式">Creational（创建模式）</h1>
+
+<h2 id="singleton单例模式">Singleton（单例模式）</h2>
+
+<p>只允许一个实例，在《Effective Java》中建议使用Enum。</p>
+<ul>
+  <li>java.lang.Runtime#getRuntime()</li>
+  <li>java.awt.Toolkit#getDefaultToolkit()</li>
+  <li>java.awt.GraphicsEnvironment#getLocalGraphicsEnvironment()</li>
+  <li>java.awt.Desktop#getDesktop()</li>
+</ul>
+
+<h2 id="prototype原型模式">Prototype（原型模式）</h2>
+
+<p>使用自己的实例创建另一个实例。有时候，创建一个实例然后再把已有实例的值拷贝过去，是一个很复杂的动作。所以，使用这个模式可以避免这样的复杂性。</p>
+<ul>
+  <li>java.lang.Object#clone()</li>
+  <li>java.lang.Cloneable</li>
+</ul>
+
+<h2 id="abstract-factory抽象工厂模式">Abstract factory（抽象工厂模式）</h2>
+
+<p>创建一组有关联的对象实例，这个模式在JDK和Framework（比如Spring）很容易找到实例。</p>
+<ul>
+  <li>java.util.Calendar#getInstance()</li>
+  <li>java.util.Arrays#asList()</li>
+  <li>java.util.ResourceBunle#getBundle()</li>
+  <li>java.sql.DriverManager#getConnection()</li>
+  <li>java.sql.Connection#createStatement()</li>
+  <li>java.sql.Statement#executeQuery()</li>
+  <li>java.text.NumberFormat#getInstance()</li>
+  <li>javax.xml.transform.TransformerFactory#newInstance()</li>
+</ul>
+
+<h2 id="factory工厂模式">Factory（工厂模式）</h2>
+
+<p>简单来说，按照需求返回一个类型的实例。</p>
+<ul>
+  <li>java.lang.Proxy#newProxyInstance()</li>
+  <li>java.lang.Object#toString()</li>
+  <li>java.lang.Class#newInstance()</li>
+  <li>java.lang.reflect.Array#newInstance()</li>
+  <li>java.lang.reflect.Constructor#newInstance()</li>
+  <li>java.lang.Boolean#valueOf(String)</li>
+  <li>java.lang.Class#forName()</li>
+</ul>
+
+<h2 id="builder建造者模式">Builder（建造者模式）</h2>
+
+<p>主要通过定义一个类来简化一个复杂对象的创建，该类的目的是构建另一个类的实例。这个模式也可以实现为一个Fluent Interface(链式调用）。</p>
+<ul>
+  <li>java.lang.StringBuilder#append()</li>
+  <li>java.lang.StringBuffer#append()</li>
+  <li>java.sql.PrepareStatement</li>
+  <li>javax.swing.GroupLayout.Group#addComponent()</li>
+</ul>
+
+<h1 id="structural结构模式">Structural（结构模式）</h1>
+
+<h2 id="proxy代理模式">Proxy（代理模式）</h2>
+
+<p>用一个简单的对象来代替一个复杂的对象。</p>
+<ul>
+  <li>java.lang.reflect.Proxy</li>
+  <li>RMI</li>
+</ul>
+
+<h2 id="adapter适配器">Adapter（适配器）</h2>
+
+<p>把一个接口或类变成另外一种。</p>
+<ul>
+  <li>java.util.Arrays#asList()</li>
+  <li>java.swing.JTable(TableModel)</li>
+  <li>java.io.InputStreamReader(InputStream)</li>
+  <li>java.io.OutputStreamWriter(OutputStream)</li>
+  <li>javax.xml.bind.annotation.adapters.XmlAdapter#marshal()</li>
+  <li>javax.xml.bind.annotation.adapters.XmlAdapter#unmarshal()</li>
+</ul>
+
+<h2 id="bridge桥接模式">Bridge（桥接模式）</h2>
+
+<p>把抽象和实现解耦，于是接口和实现可以完全独立开来。</p>
+<ul>
+  <li>AWT（提供了抽象层映射于实际的操作系统）</li>
+  <li>JDBC</li>
+</ul>
+
+<h2 id="decorator装饰器模式">Decorator（装饰器模式）</h2>
+
+<p>为一个对象动态的加上一系列的动作，而不需要因为这些动作的不同的而产生大量的继承类。这个模式在JDK中几乎无处不在，下面的列表只是一些典型的。</p>
+<ul>
+  <li>java.io.BufferedInputStream(InputStream)</li>
+  <li>java.io.DataInputStream(InputStream)</li>
+  <li>java.io.BufferedOutputStream(OutputStream)</li>
+  <li>java.util.zip.ZipOutputStream(OutputStream)</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>java.util.Collections#checked[List</td>
+          <td>Map</td>
+          <td>Set</td>
+          <td>SortedSet</td>
+          <td>SortedMap]()</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<h2 id="flyweight享元模式">Flyweight（享元模式）</h2>
+
+<p>有效率地存储大量的小的对象</p>
+<ul>
+  <li>java.lang.Integer#valueOf(int)</li>
+  <li>java.lang.Boolean#valueOf(boolean)</li>
+  <li>java.lang.Byte#valueOf(byte)</li>
+</ul>
+
+<h2 id="composite组合模式">Composite（组合模式）</h2>
+
+<p>让使用者把单独的对象和组合对象混用。</p>
+<ul>
+  <li>javax.swing.JComponent#add(Component)</li>
+  <li>java.awt.Container#add(Component)</li>
+  <li>java.util.Map#putAll(Map)</li>
+  <li>java.util.List#addAll(Collection)</li>
+  <li>java.util.Set#addAll(Collection)</li>
+</ul>
+
+<h2 id="facade门面模式">Facade（门面模式）</h2>
+
+<p>用一个简单的接口包装一组组件，接口，抽象或子系统。</p>
+<ul>
+  <li>java.lang.Class</li>
+  <li>javax.faces.webapp.FacesServlet</li>
+</ul>
+
+<h1 id="behavioral行为模式">Behavioral（行为模式）</h1>
+
+<h2 id="chain-of-responsibility责任链模式">Chain of responsibility（责任链模式）</h2>
+
+<p>把一个对象在一个链条传递直到被处理。在这个链条上的所有对象有相同的接口（抽象类）但却有不同的实现。</p>
+<ul>
+  <li>java.util.logging.Logger#log()</li>
+  <li>javax.servlet.Filter#doFilter()</li>
+</ul>
+
+<h2 id="observer观察者模式">Observer（观察者模式）</h2>
+
+<p>允许一个对象向所有的侦听对象广播自己的消息或事件。</p>
+<ul>
+  <li>java.util.EventListener</li>
+  <li>javax.servlet.http.HttpSessionBindingListener</li>
+  <li>javax.servlet.http.HttpSessionAttributeListener</li>
+  <li>javax.faces.event.PhaseListener</li>
+</ul>
+
+<h2 id="template-method模板方法">Template method（模板方法）</h2>
+
+<p>允许子类重写部分父类而不需要完全重写。</p>
+<ul>
+  <li>java.util.Collections#sort()</li>
+  <li>java.io.InputStream#skip()</li>
+  <li>java.io.InputStream#read()</li>
+  <li>java.util.AbstractList#indexOf()</li>
+</ul>
+
+<h2 id="strategy策略模式">Strategy（策略模式）</h2>
+
+<p>定义一组算法，并将其封装到一个对象中。在运行时，可以灵活的使用其中的一个算法。</p>
+<ul>
+  <li>java.util.Comparator#compare()</li>
+  <li>javax.servlet.http.HttpServlet</li>
+  <li>javax.servlet.Filter#doFilter()</li>
+</ul>
+
+<h2 id="command命令模式">Command（命令模式）</h2>
+
+<p>把一个或一些命令封装到一个对象中。</p>
+<ul>
+  <li>java.lang.Runnable</li>
+  <li>javax.swing.Action</li>
+</ul>
+
+<h2 id="iterator迭代器模式">Iterator（迭代器模式）</h2>
+
+<p>提供一种一致的方法来顺序调用一个容器中的所有元素。</p>
+<ul>
+  <li>java.util.Iterator</li>
+  <li>java.util.Enumeration</li>
+</ul>
+
+<h2 id="mediator中介者模式">Mediator（中介者模式）</h2>
+
+<p>用来减少对象间直接通讯的依赖关系。使用一个中间类来管理消息的方向。</p>
+<ul>
+  <li>java.util.Timer</li>
+  <li>java.util.concurrent.Executor#execute()</li>
+  <li>java.util.concurrent.ExecutorService#submit()</li>
+  <li>java.lang.reflect.Method#invoke()</li>
+</ul>
+
+<h2 id="memento备忘录模式">Memento（备忘录模式）</h2>
+
+<p>给一个对象的状态做一个快照。Date类在内部使用了一个long型来做这个快照。</p>
+<ul>
+  <li>java.util.Date</li>
+  <li>java.io.Serializable</li>
+</ul>
+
+<h2 id="null-object空对象模式">Null Object（空对象模式）</h2>
+
+<p>该模式用来解决如果一个Collection中没有元素的情况。</p>
+<ul>
+  <li>java.util.Collections#emptyList()</li>
+  <li>java.util.Collections#emptyMap()</li>
+  <li>java.util.Collections#emptySet()</li>
+</ul>
+
+<h2 id="state状态模式">State（状态模式）</h2>
+
+<p>该模式允许你可以在运行时很容易地根据自身内部的状态改变对象的行为。</p>
+<ul>
+  <li>java.util.Iterator</li>
+  <li>javax.faces.lifecycle.LifeCycle#execute()</li>
+</ul>
+
+<h2 id="interpreter解释器模式">Interpreter（解释器模式）</h2>
+
+<p>一个语法解释器的模式。</p>
+<ul>
+  <li>java.util.Pattern</li>
+  <li>java.text.Normalizer</li>
+  <li>java.text.Format</li>
+</ul>
+
+<h2 id="visitor访问者模式">Visitor（访问者模式）</h2>
+
+<p>作用于某个对象群中各个对象的操作，它可以使你在不改变这些对象本身的情况下，定义作用于这些对象的操作。</p>
+<ul>
+  <li>javax.lang.model.element.Element和javax.lang.model.element.ElementVisitor</li>
+  <li>javax.lang.model.type.TypeMirror和javax.lang.model.type.TypeVistor</li>
+</ul>
+
+<p>参考资料：皓叔的https://coolshell.cn/articles/3320.html</p>
+
+:ET
