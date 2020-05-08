@@ -57,12 +57,12 @@ menus:
 
   -
     href: /tech.html
-    label: Tech
+    label: tech
     target: _self
 
   -
     href: /life.html
-    label: Life
+    label: life
     target: _self
 
   # -
@@ -82,12 +82,12 @@ menus:
 
   -
     href: /link.html
-    label: Link
+    label: link
     target: _self
 
   -
     href: /about.html
-    label: About
+    label: about
     target: _self
 
 
