@@ -99,9 +99,18 @@ navs:
     label: Home
 
   -
-    href: /java.html
+    href: /java-all/java-all.html
     label: Java/Spring
     target: _self
+    subnav:
+      - subHref: /java-all/basic.html
+        subLabel: 编程基础
+      - subHref: /java-all/sourcecode.html
+        subLabel: 源码分析
+      - subHref: /java-all/jvm.html
+        subLabel: JVM
+      — subHref: /java-all/spring-all.html
+        subLabel: Spring全家桶
 
   -
     href: /algorithm.html
