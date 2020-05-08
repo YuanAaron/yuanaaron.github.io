@@ -62,7 +62,7 @@ menus:
 
   -
     href: /life.html
-    label: life
+    label: 生活
     target: _self
 
   # -
@@ -82,12 +82,12 @@ menus:
 
   -
     href: /link.html
-    label: link
+    label: 友链
     target: _self
 
   -
     href: /about.html
-    label: about
+    label: 关于
     target: _self
 
 
@@ -104,13 +104,13 @@ navs:
     target: _self
 
   -
-    href: /arch.html
-    label: 微服务架构
+    href: /tech.html
+    label: Java技术
     target: _self
 
   -
     href: /python.html
-    label: Python德塔赛
+    label: Python技术
     target: _self
 
   -
