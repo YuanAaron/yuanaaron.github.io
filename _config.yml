@@ -99,18 +99,18 @@ navs:
     label: Home
 
   -
-    href: /open-source.html
-    label: 开源
+    href: /java.html
+    label: Java/Jvm
     target: _self
 
   -
-    href: /tech.html
-    label: Java技术
+    href: /spring.html
+    label: Spring全家桶
     target: _self
 
   -
-    href: /python.html
-    label: Python技术
+    href: /algorithm.html
+    label: 算法
     target: _self
 
   -
