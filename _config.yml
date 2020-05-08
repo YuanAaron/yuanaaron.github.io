@@ -100,17 +100,17 @@ navs:
 
   -
     href: /java.html
-    label: Java/Jvm
-    target: _self
-
-  -
-    href: /spring.html
-    label: Spring全家桶
+    label: Java/Spring
     target: _self
 
   -
     href: /algorithm.html
     label: Algorithm
+    target: _self
+
+  -
+    href: /middleware.html
+    label: middleWare
     target: _self
 
   -
