@@ -1,17 +1,12 @@
-# 介绍
+# 个人博客
 
-这是我的个人博客项目使用的jekyll模板。
+这是我的个人博客项目，里面会记录生活和技术的点点滴滴。
 
-个人博客地址：http://www.machengyu.net/
-
-我的CSDN博客地址：https://blog.csdn.net/pony_maggie
+博客地址：[http://www.coderap.com](http://www.coderap.com)
 
 # 致谢
-+ 感谢[Yummy-Jekyll](https://github.com/DONGChuan/Yummy-Jekyll)，这是我博客使用的主题。我基于这个主题加入了一些自己需要的功能，比如百度统计，
-Letax公式支持等
-+ 感谢[Github](https://github.com/)提供的代码维护和发布平台
-+ 感谢[Jekyll](https://jekyllrb.com/)团队做出如此优秀的产品
-
++ 感谢[Yummy-Jekyll](https://github.com/DONGChuan/Yummy-Jekyll)的原作者创作了如此漂亮的作品，但无奈我前端太菜，没有弄到我想要的效果
++ 感谢[pony-maggie](https://github.com/pony-maggie/machengyu.github.io-theme)对原主题所做的工作，我的博客正基于此。
 
 # 使用
 
@@ -43,7 +38,7 @@ https://www.jianshu.com/p/78c64d07124d
 
 ## 如何写文章
 
-在`LessOrMore/_posts`目录下新建一个文件，可以创建文件夹并在文件夹中添加文件，方便维护。在新建文件中粘贴如下信息，并修改以下的`titile`,`date`,`categories`,`tag`的相关信息，添加`* content {:toc}`为目录相关信息，在进行正文书写前需要在目录和正文之间输入至少2行空行。然后按照正常的Markdown语法书写正文。
+在`_posts`目录下新建一个文件，可以创建文件夹并在文件夹中添加文件，方便维护。在新建文件中粘贴如下信息，并修改以下的`titile`,`date`,`categories`,`tag`的相关信息，添加`* content {:toc}`为目录相关信息，在进行正文书写前需要在目录和正文之间输入至少2行空行。然后按照正常的Markdown语法书写正文。
 
 ``` bash
 ---
@@ -65,8 +60,7 @@ tag: 教程
 我是正文。我是正文。我是正文。我是正文。我是正文。我是正文。
 ```
 
-执行
-------------------------------------
+## 执行
 
 ``` bash
 bundle exec jekyll clean
@@ -76,6 +70,11 @@ bundle exec jekyll clean
 bundle exec jekyll build
 ```
 
-生生成的_site目录就是你的博客站点的全部静态文件了，拷贝到web服务器下运行即可。
+``` bash
+# 本地运行
+bundle exec jekyll serve
+```
+
+生成的_site目录就是你的博客站点的全部静态文件了，拷贝到web服务器下运行即可。
 
 
