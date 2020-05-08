@@ -1,11 +1,9 @@
 ---
 layout: page
-title: 极客时间
-titlebar: tech
-subtitle: <span class="mega-octicon octicon-clippy"></span> &nbsp;&nbsp; 技术那些事儿
-menu: tech
+title: Java技术栈
+menu: Java/Jvm
 css: ['blog-page.css']
-permalink: /tech
+permalink: /java
 ---
 
 <div class="row">
@@ -14,7 +12,7 @@ permalink: /tech
 
         <ul id="posts-list">
             {% for post in site.posts %}
-                {% if post.category=='tech' or post.keywords contains 'tech' %}
+                {% if post.category=='Java' or post.keywords contains 'Java' %}
                 <li class="posts-list-item">
                     <div class="posts-content">
                         <span class="posts-list-meta">{{ post.date | date: "%Y-%m-%d" }}</span>

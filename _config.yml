@@ -110,12 +110,12 @@ navs:
 
   -
     href: /algorithm.html
-    label: 算法
+    label: Algorithm
     target: _self
 
   -
     href: /archives.html
-    label: 归档
+    label: Archives
     target: _self
 
 
@@ -131,14 +131,9 @@ classes:
     describe: 生活就是故事，故事就是生活
 
   -
-    href: /arch.html
-    name: 架构师之路
-    describe: 一个架构师的自我修养
-
-  -
-    href: /python.html
-    name: Python德塔赛
-    describe: python数据分析，爬虫
+    href: /tech.html
+    name: 我的技术
+    describe: 不想当将军的兵不是好兵
 
 
 # ---------------- #

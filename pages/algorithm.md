@@ -1,12 +1,9 @@
 ---
 layout: page
-title: 用python学习数据科学
-titlebar: python
-subtitle: <span class="mega-octicon octicon-graph"></span>&nbsp;&nbsp;
-     德塔赛是data science音译<br/>用python爬虫和数据分析是我平时的小爱好
-menu: python
+title: 编程内功
+menu: 算法
 css: ['blog-page.css']
-permalink: /python
+permalink: /algorithm
 ---
 
 <div class="row">
@@ -15,7 +12,7 @@ permalink: /python
 
         <ul id="posts-list">
             {% for post in site.posts %}
-                {% if post.category=='python'  or post.keywords contains 'Python' %}
+                {% if post.category=='Algorithm'  or post.keywords contains 'Algorithm' %}
                 <li class="posts-list-item">
                     <div class="posts-content">
                         <span class="posts-list-meta">{{ post.date | date: "%Y-%m-%d" }}</span>
