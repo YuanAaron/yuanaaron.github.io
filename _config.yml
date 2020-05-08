@@ -55,10 +55,10 @@ paginate_path: 'page:num'
 # Navigation. top menu list
 menus:
 
-  -
-    href: /tech.html
-    label: tech
-    target: _self
+  # -
+  #   href: /tech.html
+  #   label: tech
+  #   target: _self
 
   -
     href: /life.html
