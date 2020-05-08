@@ -115,6 +115,9 @@ navs:
       -
         subHref: /java-all/spring-all.html
         subLabel: Spring全家桶
+      - 
+        subHref: /java-all/design-pattern.html
+        subLabel: 设计模式
 
   -
     href: /algorithm.html
