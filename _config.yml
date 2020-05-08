@@ -57,27 +57,37 @@ menus:
 
   -
     href: /tech.html
-    label: 技术
+    label: Tech
     target: _self
 
   -
     href: /life.html
-    label: 生活
+    label: Life
+    target: _self
+
+  # -
+  #   href: /arch.html
+  #   label: 架构
+  #   target: _self
+
+  # -
+  #   href: /payment.html
+  #   label: 支付
+  #   target: _self
+
+  # -
+  #   href: /blockchain.html
+  #   label: 区块链
+  #   target: _self
+
+  -
+    href: /link.html
+    label: Link
     target: _self
 
   -
-    href: /arch.html
-    label: 架构
-    target: _self
-
-  -
-    href: /payment.html
-    label: 支付
-    target: _self
-
-  -
-    href: /blockchain.html
-    label: 区块链
+    href: /about.html
+    label: About
     target: _self
 
 
@@ -106,11 +116,6 @@ navs:
   -
     href: /archives.html
     label: 归档
-    target: _self
-
-  -
-    href: /about.html
-    label: 我就是我
     target: _self
 
 
