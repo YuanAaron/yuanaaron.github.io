@@ -6,4 +6,4 @@ css: ['blog-page.css']
 permalink: /spring
 ---
 
-{% include spring.html %}
+{% include middleware.html %}
