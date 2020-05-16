@@ -81,8 +81,8 @@ menus:
   #   target: _self
 
   -
-    href: /link.html
-    label: 友链
+    href: /resource.html
+    label: 资源
     target: _self
 
   -
