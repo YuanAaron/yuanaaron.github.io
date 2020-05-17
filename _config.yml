@@ -126,12 +126,12 @@ navs:
 
   -
     href: /geek-all/geek-all.html
-    label: Geektime
+    label: Geek
     target: _self
     subnav:
       - 
         subHref: /geek-all/concurrency.html
-        subLabel: Java并发编程实战
+        subLabel: Concurrency
       - 
         subHref: /geek-all/sourcecode.html
         subLabel: 源码分析

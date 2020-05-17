@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Java并发编程实战
+title: Concurrency
 menu: geektime
 css: ['blog-page.css']
 permalink: /geek-all/concurrency
