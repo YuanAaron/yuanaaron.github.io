@@ -9,6 +9,7 @@ permalink: /resource
 ## 博客
 + [纯洁的微笑](http://www.ityouknow.com/)
 + [美团技术团队](https://tech.meituan.com/)
++ [阮一峰](http://www.ruanyifeng.com/blog/)
 
 ## 文章
 
