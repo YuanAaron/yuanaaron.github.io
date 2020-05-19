@@ -133,17 +133,17 @@ navs:
         subHref: /geek-all/concurrency.html
         subLabel: Concurrency
       - 
-        subHref: /geek-all/sourcecode.html
-        subLabel: 源码分析
+        subHref: /geek-all/database.html
+        subLabel: MySQL/Redis
       - 
-        subHref: /geek-all/jvm.html
-        subLabel: JVM
+        subHref: /geek-all/network.html
+        subLabel: Network 
+      - 
+        subHref: /geek-all/linux.html
+        subLabel: Linux
       -
-        subHref: /geek-all/spring-all.html
-        subLabel: Spring全家桶
-      - 
-        subHref: /geek-all/design-pattern.html
-        subLabel: 设计模式
+        subHref: /geek-all/mq.html
+        subLabel: MQ
 
   -
     href: /archives.html
