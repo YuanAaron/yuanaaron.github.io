@@ -1,9 +1,9 @@
 ---
 layout: page
 title: 身经百战
-menu: projects
+menu: project
 css: ['blog-page.css']
-permalink: /projects
+permalink: /project
 ---
 
 

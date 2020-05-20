@@ -55,20 +55,15 @@ paginate_path: 'page:num'
 # Navigation. top menu list
 menus:
 
-  # -
-  #   href: /tech.html
-  #   label: tech
-  #   target: _self
+  -
+    href: /project.html
+    label: 项目
+    target: _self
 
   -
     href: /life.html
     label: 生活
     target: _self
-
-  # -
-  #   href: /arch.html
-  #   label: 架构
-  #   target: _self
 
   # -
   #   href: /payment.html
@@ -120,9 +115,37 @@ navs:
         subLabel: 设计模式
 
   -
-    href: /algorithm.html
+    href: /algorithm-all/algorithm-all.html
     label: Algorithm
     target: _self
+    subnav:
+      -
+        subHref: /algorithm-all/array.html
+        subLabel: Array
+      -
+        subHref: /algorithm-all/list.html
+        subLabel: List
+      -
+        subHref: /algorithm-all/stack.html
+        subLabel: Stack
+      -
+        subHref: /algorithm-all/queue.html
+        subLabel: Queue
+      -
+        subHref: /algorithm-all/heap.html
+        subLabel: Heap
+      -
+        subHref: /algorithm-all/string.html
+        subLabel: String
+      -
+        subHref: /algorithm-all/tree.html
+        subLabel: Tree
+      -
+        subHref: /algorithm-all/recursion.html
+        subLabel: Recursion
+      -
+        subHref: /algortighm-all/sort.html
+        subLabel: Sort
 
   -
     href: /geek-all/geek-all.html
