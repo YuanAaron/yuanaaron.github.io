@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 身经百战
+title: 实践是学习的最短路径！
 menu: project
 css: ['blog-page.css']
 permalink: /project
