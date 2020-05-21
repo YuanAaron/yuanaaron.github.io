@@ -1,3 +1,12 @@
+---
+layout: post 
+author: oshacker
+title: Linux下追查线上问题常用命令
+category: linux
+tags: [linux]
+excerpt: linux查用命令集
+---
+
 ## 查找占用CPU最多的10个进程
 
 方法一：ps -aux | sort -k4nr | head -10
