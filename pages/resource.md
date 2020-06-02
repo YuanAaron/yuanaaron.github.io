@@ -21,5 +21,6 @@ permalink: /resource
 
 ### MySQL数据库
 + [深入MySQL源码 学习方法 何登成专家](https://www.cnblogs.com/zengkefu/p/5674503.html)
++ [数据库内核月报](http://mysql.taobao.org/monthly/)
 
 ## 其它  
