@@ -6,9 +6,12 @@ permalink: /resource
 ---
 
 
-## 博客
-+ [纯洁的微笑](http://www.ityouknow.com/)
+## 技术团队
 + [美团技术团队](https://tech.meituan.com/)
++ [数据库内核月报](http://mysql.taobao.org/monthly/)
+
+## 个人博客
++ [纯洁的微笑](http://www.ityouknow.com/)
 + [架构师之路](https://chuansongme.com/account/gh_10a6b96351a9/recent)
 + [并发编程网](https://chuansongme.com/account/ifeves/recent)
 + [阮一峰](http://www.ruanyifeng.com/blog/)
@@ -21,6 +24,6 @@ permalink: /resource
 
 ### MySQL数据库
 + [深入MySQL源码 学习方法 何登成专家](https://www.cnblogs.com/zengkefu/p/5674503.html)
-+ [数据库内核月报](http://mysql.taobao.org/monthly/)
++ [MySQL索引原理及慢查询优化](https://tech.meituan.com/2014/06/30/mysql-index.html)
 
 ## 其它  
