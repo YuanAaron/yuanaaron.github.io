@@ -1,11 +1,9 @@
 ---
 layout: page
-title: 支付系列文章
-titlebar: payment
-subtitle: <span class="mega-octicon octicon-clippy"></span>&nbsp;&nbsp; POS，金融IC卡，支付系统系列文章
-menu: payment
+title: 梦想还是要有的，万一实现了呢？
+menu: arch
 css: ['blog-page.css']
-permalink: /payment
+permalink: /arch
 ---
 
 <div class="row">
@@ -14,7 +12,7 @@ permalink: /payment
 
         <ul id="posts-list">
             {% for post in site.posts %}
-                {% if post.category=='payment'  or post.keywords contains '支付' %}
+                {% if post.category=='arch'  or post.keywords contains 'arch' %}
                 <li class="posts-list-item">
                     <div class="posts-content">
                         <span class="posts-list-meta">{{ post.date | date: "%Y-%m-%d" }}</span>

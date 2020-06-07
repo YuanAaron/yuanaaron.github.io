@@ -61,14 +61,14 @@ menus:
     target: _self
 
   -
+    href: /arch.html
+    label: 架构
+    target: _self
+
+  -
     href: /life.html
     label: 生活
     target: _self
-
-  # -
-  #   href: /payment.html
-  #   label: 支付
-  #   target: _self
 
   # -
   #   href: /blockchain.html
