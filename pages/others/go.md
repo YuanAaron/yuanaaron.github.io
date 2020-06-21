@@ -6,4 +6,4 @@ css: ['blog-page.css']
 permalink: /others/go
 ---
 
-{% include others/go %}
+{% include others/go.html %}
