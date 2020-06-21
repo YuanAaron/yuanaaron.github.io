@@ -176,6 +176,27 @@ navs:
     label: Archives
     target: _sel
 
+  -
+    href: /
+    label: Others
+    target: _self
+    subnav:
+      - 
+        subHref: /others/corcplusplus.html
+        subLabel: C/C++
+      - 
+        subHref: /others/python.html
+        subLabel: Python
+      - 
+        subHref: /others/go.html
+        subLabel: Go
+      -
+        subHref: /others/front.html
+        subLabel: FrontEnd
+      - 
+        subHref: /others/spark.html
+        subLabel: BigData
+
 # labels. my blog key words
 labels:
 
