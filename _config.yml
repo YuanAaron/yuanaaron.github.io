@@ -120,32 +120,11 @@ navs:
     target: _self
     subnav:
       -
-        subHref: /algorithm-all/array.html
-        subLabel: Array
+        subHref: /algorithm-all/jianzhi.html
+        subLabel: 剑指Offer
       -
-        subHref: /algorithm-all/list.html
-        subLabel: List
-      -
-        subHref: /algorithm-all/stack.html
-        subLabel: Stack
-      -
-        subHref: /algorithm-all/queue.html
-        subLabel: Queue
-      -
-        subHref: /algorithm-all/heap.html
-        subLabel: Heap
-      -
-        subHref: /algorithm-all/string.html
-        subLabel: String
-      -
-        subHref: /algorithm-all/tree.html
-        subLabel: Tree
-      -
-        subHref: /algorithm-all/recursion.html
-        subLabel: Recursion
-      -
-        subHref: /algortighm-all/sort.html
-        subLabel: Sort
+        subHref: /algorithm-all/leetcode.html
+        subLabel: LeetCode
 
   -
     href: /geek-all/geek-all.html
