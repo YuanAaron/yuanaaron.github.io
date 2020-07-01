@@ -115,7 +115,7 @@ navs:
         subLabel: 设计模式
 
   -
-    href: /algorithm-all/algorithm-all.html
+    href: /
     label: Algorithm
     target: _self
     subnav:
