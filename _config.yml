@@ -120,6 +120,9 @@ navs:
     target: _self
     subnav:
       -
+        subHref: /algorithm-all/basicAlg.html
+        subLabel: 基础算法
+      -
         subHref: /algorithm-all/jianzhi.html
         subLabel: 剑指Offer
       -
