@@ -178,6 +178,9 @@ navs:
       - 
         subHref: /others/spark.html
         subLabel: BigData
+      -
+        subHref: /others/interview
+        subLabel: Interview
 
 # labels. my blog key words
 labels:
