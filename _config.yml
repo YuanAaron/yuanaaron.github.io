@@ -10,7 +10,7 @@ title:  从零开始
 subtitle: 积累技术，记录生活！
 name: 从零开始
 encoding: "utf-8"
-favicon: favicon.png 
+favicon: favicon.jpg 
 
 repository: YuanAaron/yuanaaron.github.io
 github_url: https://github.com/YuanAaron
@@ -115,19 +115,9 @@ navs:
         subLabel: 设计模式
 
   -
-    href: /
+    href: https://github.com/YuanAaron/leetcode
     label: Algorithm
-    target: _self
-    subnav:
-      -
-        subHref: /algorithm-all/basicAlg.html
-        subLabel: 基础算法
-      -
-        subHref: /algorithm-all/jianzhi.html
-        subLabel: 剑指Offer
-      -
-        subHref: /algorithm-all/leetcode.html
-        subLabel: LeetCode
+    target: _blank
 
   -
     href: /geek-all/geek-all.html
