@@ -2,8 +2,8 @@
 layout: post 
 author: oshacker
 title: Redis Debug
-category: database
-tags: [database,redis]
+category: redis
+tags: [geek,redis]
 excerpt: 用gdb/vscode调试redis源码
 ---
 

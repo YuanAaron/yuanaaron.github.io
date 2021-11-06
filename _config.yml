@@ -129,7 +129,10 @@ navs:
         subLabel: Concurrency
       - 
         subHref: /geek-all/database.html
-        subLabel: MySQL/Redis
+        subLabel: MySQL
+      - 
+        subHref: /geek-all/redis.html
+        subLabel: Redis 
       - 
         subHref: /geek-all/network.html
         subLabel: Network 
