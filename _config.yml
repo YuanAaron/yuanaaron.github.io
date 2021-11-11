@@ -187,9 +187,9 @@ classes:
     describe: 生活就是故事，故事就是生活
 
   -
-    href: /tech.html
-    name: 我的技术
-    describe: 不想当将军的兵不是好兵
+    href: /prod.html
+    name: 生产问题排查记录
+    describe: 生产问题无小事
 
 
 # ---------------- #

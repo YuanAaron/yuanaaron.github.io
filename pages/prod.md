@@ -1,9 +1,9 @@
 ---
 layout: page
-title: 梦想还是要有的，万一实现了呢？
-menu: arch
+title: 生产问题排查与复盘
+menu: prod
 css: ['blog-page.css']
-permalink: /arch
+permalink: /prod
 ---
 
 <div class="row">
@@ -12,7 +12,7 @@ permalink: /arch
 
         <ul id="posts-list">
             {% for post in site.posts %}
-                {% if post.category=='arch'  or post.keywords contains 'arch' %}
+                {% if post.category=='prod'  or post.keywords contains 'prod' %}
                 <li class="posts-list-item">
                     <div class="posts-content">
                         <span class="posts-list-meta">{{ post.date | date: "%Y-%m-%d" }}</span>
