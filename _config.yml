@@ -14,7 +14,7 @@ favicon: favicon.jpg
 
 repository: YuanAaron/yuanaaron.github.io
 github_url: https://github.com/YuanAaron
-url: http://www.coderap.cn
+url: https://www.coderap.cn
 enforce_ssl: coderap.cn
 
 baidu_analysis: 353759d3ad3db9578b6d0ac477ddca1d
@@ -223,20 +223,19 @@ comments_provider: gitalk
 # !!!Important!!! Please modify infos below to yours
 # https://disqus.com
 disqus:
-    username: xxxx(换成自己的)
+    username: YuanAaron
 # https://imsun.net/posts/gitment-introduction/
 gitment:
-    owner: xxxx(换成自己的)
-    repo: xxxx(换成自己的)
+    owner: YuanAaron
+    repo: Blog_Comments
     oauth:
-        client_id: xxxx(换成自己的)
-        client_secret: xxxx(换成自己的)
+        client_id: 944255c0f5b5d01cc6fc
+        client_secret: 5a9f2aa094a07fc5cdc78c89113cbfcb0a220726
 # https://github.com/gitalk/gitalk#install
 gitalk:
-    owner: xxxx(换成自己的)
-    repo: xxxx(换成自己的)
-    clientID: xxxx(换成自己的)
-    clientSecret: xxxx(换成自己的)
+    owner: YuanAaron
+    repo: Blog_Comments
+    clientID: 944255c0f5b5d01cc6fc
+    clientSecret: 5a9f2aa094a07fc5cdc78c89113cbfcb0a220726
 # 在使用其它评论组件时可点击显示 Disqus
 lazy_load_disqus : true
-github: [metadata]
