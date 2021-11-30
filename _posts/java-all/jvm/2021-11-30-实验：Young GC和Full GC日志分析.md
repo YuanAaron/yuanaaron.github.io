@@ -1,0 +1,185 @@
+---
+layout: post 
+author: oshacker
+title: Young GC和Full GC日志分析
+category: jvm
+tags: [java,jvm]
+excerpt: 【JVM理论与实战：实验】
+---
+
+前面的文章我们都是在分析JVM的运行原理、GC原理及优化原理，接下来，我们将通过代码模拟 JVM的各种场景，同时结合GC日志分析JVM到底是怎么运行的。
+
+本篇第一部分通过代码演示年轻代的Young GC是如何发生的，然后通过GC日志慢慢分析JVM的GC到底是如何运行的。
+
+## Young GC日志分析 
+
+代码如下：
+
+```java
+public class App {
+    public static void main(String[] args) {
+        byte[] arr1 = new byte[1024*1024]; //1M
+        arr1 = new byte[1024*1024];
+        arr1 = new byte[1024*1024];
+        arr1 = null;
+        
+        byte[] arr2 = new byte[2*1024*1024];
+    }
+}
+```
+
+JVM参数为：
+
+```
+-XX:NewSize=5242880 -XX:MaxNewSize=5242880 -XX:InitialHeapSize=10485760 -XX:MaxHeapSize=10485760 -XX:SurvivorRatio=8 -XX:PretenureSizeThreshold=10485760 -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -Xloggc:gc.log
+
+【注意】：最好用命令行运行，IDEA可能会有较大误差（这可能是IDEA的坑吧！！！）
+```
+
+> 参数解释：堆内存分配10M内存，其中新生代5M（Eden:S1:s2=8:1:1）,老年代5M，大对象超过10M会直接进入老年代，年轻代使用ParNew垃圾回收器，老年代使用CMS垃圾回收器。
+
+在JVM中代码的运行：
+
++ 第一行代码一旦运行，就在Eden区放入一个1M的对象，同时在main线程的虚拟机栈中压入main()方法的栈桢，在栈桢内部有一个arr1变量，它指向Eden区的那个1M的数组；
++ 第二行代码会在Eden区中再创建一个1M的数组，并让局部变量指向该数组，这样第一个数组就没人引用了，此时第一个数组就成了不被引用的垃圾对象；
++ 第三行代码和第二行代码同理，这样前两个数组都成了不被引用的垃圾对象；
++ 第四行代码后arr1什么都不指向了，这样之前创建的3个数组全部变成了垃圾对象；
++ 第五行代码会创建一个2M的数组，尝试放入Eden区，但是此时Eden区只剩1M，放不下一个2M的数组，这样就会触发年轻代的Young GC。此时需要判断是否需要空间担保，3M的垃圾对象 < 5M的老年代内存，不需要空间担保，直接进行Young GC。
+
+### GC日志分析
+
+执行后，gc.log中的内容如下：
+
+```java
+Java HotSpot(TM) 64-Bit Server VM (25.231-b11) for bsd-amd64 JRE (1.8.0_231-b11), built on Oct  5 2019 03:15:25 by "java_re" with gcc 4.2.1 (Based on Apple Inc. build 5658) (LLVM build 2336.11.00)
+Memory: 4k page, physical 33554432k(2906256k free)
+
+/proc/meminfo:
+
+//运行程序的JVM参数（对比发现，基本都是自己设置的，还有一些是默认设置）
+CommandLine flags: -XX:InitialHeapSize=10485760 -XX:MaxHeapSize=10485760 -XX:MaxNewSize=5242880 -XX:NewSize=5242880 -XX:OldPLABSize=16 -XX:PretenureSizeThreshold=10485760 -XX:+PrintGC -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:SurvivorRatio=8 -XX:+UseCompressedClassPointers -XX:+UseCompressedOops -XX:+UseConcMarkSweepGC -XX:+UseParNewGC
+
+// 0.068：系统运行以后过了68ms发生了本次GC
+// GC（Allocation Failure）：触发本次垃圾回收的原因是内存分配失败（要分配一个2M的数组，Eden区内存不够了）
+// ParNew：触发的是Young GC，所以用指定的ParNew垃圾回收器进行GC
+// 3678K->325K(4608K)：3678K表示GC前年轻代内存占用；325K表示GC后年轻代内存占用（存活对象，会放入Survivor区）；4608K表示年轻代的可用空间大小（注意：只有一个Survivor区可以放存活对象，另外一个必须是空闲的，所以就是Eden+1个Survivor区的大小）
+// 0.0004953 secs：年轻代垃圾回收总耗时
+// 3678K->325K(9728K)：3678K表示GC前整个堆内存占用；325K表示GC后整个堆内存占用；9728K表示Java堆内存的可用空间大小（Eden+1个Survivor+老年代）
+// 0.0005615 secs：GC总耗时（不清楚与上面时间的区别？？？）
+// user=0.00 sys=0.01, real=0.00 secs：第一个表示用户态CPU执行时间（不包含挂起）；第二个表示内核态CPU执行时间（不包含挂起）；第三个表示实际执行时间
+0.068: [GC (Allocation Failure) 0.068: [ParNew: 3678K->325K(4608K), 0.0004953 secs] 3678K->325K(9728K), 0.0005615 secs] [Times: user=0.00 sys=0.01, real=0.00 secs]
+
+// GC过后堆内存的使用情况，这是在JVM退出时打印的当前堆内存的使用情况
+// par new generation   total 4608K, used 2414K表示年轻代总共有4.5M内存，目前使用了2414K（约等于2.36M）
+// eden space 4096K,  51% used：Eden区此时4M的内存使用了51%，就是因为里面有一个2M的数组对象
+// from space 512K,  63% used：from区存放了存活下来的325K对象。
+// concurrent mark-sweep generation total 5120K, used 0K：CMS垃圾回收器管理的老年代内存是5M，此时使用了0K（如果不是0，关于这个是啥后面有了内存分析工具再说）
+// Metaspace元数据空间和class空间存放一些类信息、常量池等
+Heap
+ par new generation   total 4608K, used 2414K [0x00000007bf600000, 0x00000007bfb00000, 0x00000007bfb00000)
+  eden space 4096K,  51% used [0x00000007bf600000, 0x00000007bf80a558, 0x00000007bfa00000)
+  from space 512K,  63% used [0x00000007bfa80000, 0x00000007bfad15f8, 0x00000007bfb00000)
+  to   space 512K,   0% used [0x00000007bfa00000, 0x00000007bfa00000, 0x00000007bfa80000)
+ concurrent mark-sweep generation total 5120K, used 0K [0x00000007bfb00000, 0x00000007c0000000, 0x00000007c0000000)
+ Metaspace       used 2661K, capacity 4486K, committed 4864K, reserved 1056768K
+  class space    used 287K, capacity 386K, committed 512K, reserved 1048576K
+```
+
+> 【疑问1】：在GC之前，Eden区里已经放了3个1M的数组，即3072K，那么GC之前年轻代应该是使用了3072K的内存，为啥使用了3678的内存呢？
+>
+> 【解答1】：虽然你创建的数组本身是1M，但为了存储这个数组，JVM还会附带一些其他信息（后面有专门的工具可以分析堆内存快照），所以每个数组实际占用的内部是大于1M的。
+>
+> 【疑问2】：在JVM退出前，为什么年轻代占用了2414的内存？
+>
+> 【解答2】：在GC后，在Eden区又分配了一个2M的数组，即2048K，再加上上次GC后转入S1的存活对象325K，总共是2373K。至于2414-2373=41K内存，你也可以认为是数组对象额外使用的内存空间，或者说是对象的元数据（上文提到的附带信息）。
+
+GC过程分析：在GC之前，在Eden区就放了3个1M的数组，这三个数组对象和附带信息总共占据了3678K的内存。这是又想在Eden区分配一个2M的数组，就出现了“Allocation Failure”（内存分配失败），然后就触发了Young GC。ParNew执行垃圾回收，回收掉之前创建的三个没人引用的数组（垃圾对象），GC之后年轻代的内存占用从3678K降到了325K，即这次GC有325K的存活对象从Eden区转移到了Survivor区（S1又称为Survivor From，S2又称为S2）。
+
+### 思考
+
+Jdk1.8中Metaspace和class space都存放什么？GC日志中的used、capacity、committed、reserved几个字段都表示什么含义？
+
+Google到一篇文章 [”used/capacity/commited/reserved“](https://blog.csdn.net/reliveIT/article/details/115377713)，但目前功力不够，看起来很吃力，就先放在这了。
+
+## Full GC日志分析 
+
+前面分析了一次Young GC的日志 ，并结合GC日志分析了一次Young GC执行的全过程。解析来这一部分通过案例来体验对象是如何从新生代进入老年代的。
+
+前面总结过对象进入老年代的4个常见时机：
+
++ 在新生代躲过15次GC之后进入老年代 ；
++ 动态年龄判断规则（最常见）：如果Survivor区域内年龄1+年龄2+...+年龄n的对象总和大于Survivor区的50%，此时年龄n及以上的对象会进入老年代；
++ 一次Young GC后存活对象太多，无法放入Survivor区，就会直接进入老年代
++ 大对象直接进入老年代
+
+### 动态年龄判断规则
+
+代码如下：
+
+```java
+public class App {
+    public static void main(String[] args) {
+        byte[] arr1 = new byte[2*1024*1024];
+        arr1 = new byte[2*1024*1024];
+        arr1 = new byte[2*1024*1024];
+        arr1 = null;
+
+        byte[] arr2 = new byte[128*1024];
+        byte[] arr3 = new byte[2*1024*1024];
+    }
+}
+```
+
+参数如下：
+
+```
+-XX:NewSize=10485760 -XX:MaxNewSize=10485760 -XX:InitialHeapSize=20971520 -XX:MaxHeapSize=20971520 -XX:SurvivorRatio=8 -XX:MaxTenuringThreshold=15 -XX:PretenureSizeThreshold=10485760 -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -Xloggc:gc.log
+```
+
+### GC日志分析
+
+```java
+Java HotSpot(TM) 64-Bit Server VM (25.231-b11) for bsd-amd64 JRE (1.8.0_231-b11), built on Oct  5 2019 03:15:25 by "java_re" with gcc 4.2.1 (Based on Apple Inc. build 5658) (LLVM build 2336.11.00)
+Memory: 4k page, physical 33554432k(2817004k free)
+
+/proc/meminfo:
+
+CommandLine flags: -XX:InitialHeapSize=20971520 -XX:MaxHeapSize=20971520 -XX:MaxNewSize=10485760 -XX:MaxTenuringThreshold=15 -XX:NewSize=10485760 -XX:OldPLABSize=16 -XX:PretenureSizeThreshold=10485760 -XX:+PrintGC -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:SurvivorRatio=8 -XX:+UseCompressedClassPointers -XX:+UseCompressedOops -XX:+UseConcMarkSweepGC -XX:+UseParNewGC 
+0.071: [GC (Allocation Failure) 0.071: [ParNew: 7071K->589K(9216K), 0.0005825 secs] 7071K->589K(19456K), 0.0006554 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] 
+0.072: [GC (Allocation Failure) 0.072: [ParNew: 7149K->0K(9216K), 0.0022201 secs] 7149K->560K(19456K), 0.0022485 secs] [Times: user=0.01 sys=0.00, real=0.01 secs] 
+Heap
+ par new generation   total 9216K, used 2212K [0x00000007bec00000, 0x00000007bf600000, 0x00000007bf600000)
+  eden space 8192K,  27% used [0x00000007bec00000, 0x00000007bee290e0, 0x00000007bf400000)
+  from space 1024K,   0% used [0x00000007bf400000, 0x00000007bf400000, 0x00000007bf500000)
+  to   space 1024K,   0% used [0x00000007bf500000, 0x00000007bf500000, 0x00000007bf600000)
+ concurrent mark-sweep generation total 10240K, used 560K [0x00000007bf600000, 0x00000007c0000000, 0x00000007c0000000)
+ Metaspace       used 2661K, capacity 4486K, committed 4864K, reserved 1056768K
+  class space    used 287K, capacity 386K, committed 512K, reserved 1048576K
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
