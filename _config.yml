@@ -95,21 +95,18 @@ navs:
 
   -
     href: /java-all/java-all.html
-    label: Java/Spring
+    label: Java
     target: _self
     subnav:
       - 
         subHref: /java-all/basic.html
         subLabel: 编程基础
       - 
-        subHref: /java-all/sourcecode.html
-        subLabel: 源码分析
+        subHref: /java-all/jdk.html
+        subLabel: JDK源码分析
       - 
         subHref: /java-all/jvm.html
         subLabel: JVM
-      -
-        subHref: /java-all/spring-all.html
-        subLabel: Spring全家桶
       - 
         subHref: /java-all/design-pattern.html
         subLabel: 设计模式
@@ -119,32 +116,67 @@ navs:
     label: Algorithm
     target: _blank
 
+  - href: /framework/framework.html
+    label: Framework
+    target: _self
+    subnav:
+      -
+        subHref: /framework/spring.html
+        subLabel: Spring
+      -
+        subHref: /framework/springmvc.html
+        subLabel: Spring MVC
+      -
+        subHref: /framework/mybatis.html
+        subLabel: MyBatis
+      -
+        subHref: /framework/springboot.html
+        subLabel: Spring Boot
+      -
+        subHref: /framework/springcloud.html
+        subLabel: Spring Cloud
+
   -
-    href: /geek-all/geek-all.html
-    label: Geek
+    href: /middleware/middleware.html
+    label: Middleware
     target: _self
     subnav:
       - 
-        subHref: /geek-all/concurrency.html
-        subLabel: Concurrency
+        subHref: /middleware/redis.html
+        subLabel: Redis  
+      -
+        subHref: /middleware/mq.html
+        subLabel: Kafka/RocketMQ
+      -
+        subHref: /middleware/dubbo.html
+        subLabel: Netty/RPC/Dubbo
+      -
+        subHref: /middleware/elk.html
+        subLabel: ELK
       - 
-        subHref: /geek-all/database.html
+        subHref: /middleware/zk.html
+        subLabel: ZK/Eureka/Apollo
+
+  -
+    href: /cs/cs.html
+    label: CS 
+    target: _self
+    subnav:
+      - 
+        subHref: /cs/corcplusplus.html
+        subLabel: C/C++
+      - 
+        subHref: /cs/database.html
         subLabel: MySQL
       - 
-        subHref: /geek-all/redis.html
-        subLabel: Redis 
+        subHref: /cs/network.html
+        subLabel: Network
       - 
-        subHref: /geek-all/network.html
-        subLabel: Network 
-      - 
-        subHref: /geek-all/linux.html
+        subHref: /cs/linux.html
         subLabel: Linux
       -
-        subHref: /geek-all/mq.html
-        subLabel: MQ
-      -
-        subHref: /geek-all/dubbo.html
-        subLabel: Dubbo/Netty
+        subHref: /cs/distribution.html
+        subLabel: Distribution
 
   -
     href: /archives.html
@@ -156,9 +188,6 @@ navs:
     label: Others
     target: _self
     subnav:
-      - 
-        subHref: /others/corcplusplus.html
-        subLabel: C/C++
       - 
         subHref: /others/python.html
         subLabel: Python
