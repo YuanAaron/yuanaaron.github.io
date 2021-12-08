@@ -1,9 +1,9 @@
 ---
 layout: page
-title: MySQL/Redis
-menu: geektime
+title: MySQL
+menu: CS
 css: ['blog-page.css']
-permalink: /geek-all/database
+permalink: /cs/database
 ---
 
-{% include geek-all/database.html %}
+{% include cs/database.html %}

@@ -116,7 +116,8 @@ navs:
     label: Algorithm
     target: _blank
 
-  - href: /framework/framework.html
+  - 
+    href: /framework/framework.html
     label: Framework
     target: _self
     subnav:
