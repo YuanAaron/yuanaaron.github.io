@@ -111,10 +111,10 @@ navs:
         subHref: /java-all/design-pattern.html
         subLabel: 设计模式
 
-  -
-    href: https://github.com/YuanAaron/leetcode
-    label: Algorithm
-    target: _blank
+  # -
+  #   href: https://github.com/YuanAaron/leetcode
+  #   label: Algorithm
+  #   target: _blank
 
   - 
     href: /framework/framework.html
@@ -164,8 +164,8 @@ navs:
     target: _self
     subnav:
       - 
-        subHref: /cs/corcplusplus.html
-        subLabel: C/C++
+        subHref: https://github.com/YuanAaron/leetcode
+        subLabel: Algorithm
       - 
         subHref: /cs/database.html
         subLabel: MySQL
@@ -178,6 +178,9 @@ navs:
       -
         subHref: /cs/distribution.html
         subLabel: Distribution
+      - 
+        subHref: /cs/corcplusplus.html
+        subLabel: C/C++
 
   -
     href: /archives.html
@@ -190,20 +193,18 @@ navs:
     target: _self
     subnav:
       - 
+        subHref: /others/spark.html
+        subLabel: BigData
+      -
+        subHref: /others/front.html
+        subLabel: FrontEnd
+      - 
         subHref: /others/python.html
         subLabel: Python
       - 
         subHref: /others/go.html
         subLabel: Go
-      -
-        subHref: /others/front.html
-        subLabel: FrontEnd
-      - 
-        subHref: /others/spark.html
-        subLabel: BigData
-      -
-        subHref: /others/interview
-        subLabel: Interview
+     
 
 # labels. my blog key words
 labels:

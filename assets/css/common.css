@@ -42,7 +42,7 @@
 #site-header-brand, #site-header-brand .octicon {
     margin-top: 0;
     margin-bottom: 0;
-    font-size: 36px;
+    font-size: 38px;
     font-weight: 400;
     line-height: 38px;
 }
@@ -263,7 +263,7 @@ blockquote {
 }
 .site-header-nav-item > a {
     display: block;
-    padding: 10px;
+    padding: 5px;
     color: #000;
 }
 .site-header-nav-item .submenu {
@@ -332,5 +332,5 @@ blockquote {
     }
 }
 .h2, h2 {
-    font-size: 21px;
+    font-size: 26px;
 }
