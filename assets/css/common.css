@@ -263,7 +263,7 @@ blockquote {
 }
 .site-header-nav-item > a {
     display: block;
-    padding: 5px;
+    padding: 10px;
     color: #000;
 }
 .site-header-nav-item .submenu {

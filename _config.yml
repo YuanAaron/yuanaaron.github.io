@@ -118,7 +118,7 @@ navs:
 
   - 
     href: /framework/framework.html
-    label: Framework
+    label: 框架
     target: _self
     subnav:
       -
@@ -139,7 +139,7 @@ navs:
 
   -
     href: /middleware/middleware.html
-    label: Middleware
+    label: 中间件
     target: _self
     subnav:
       - 
@@ -177,7 +177,7 @@ navs:
         subLabel: Linux
       -
         subHref: /cs/distribution.html
-        subLabel: Distribution
+        subLabel: 分布式
       - 
         subHref: /cs/corcplusplus.html
         subLabel: C/C++
@@ -189,15 +189,15 @@ navs:
 
   -
     href: /
-    label: Others
+    label: 其他
     target: _self
     subnav:
       - 
         subHref: /others/spark.html
-        subLabel: BigData
+        subLabel: 大数据
       -
         subHref: /others/front.html
-        subLabel: FrontEnd
+        subLabel: 前端
       - 
         subHref: /others/python.html
         subLabel: Python
