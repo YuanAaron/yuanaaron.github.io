@@ -1,7 +1,7 @@
 ---
 layout: page
 title: MySQL
-menu: CS
+menu: cs
 css: ['blog-page.css']
 permalink: /cs/database
 ---

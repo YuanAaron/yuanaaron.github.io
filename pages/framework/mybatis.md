@@ -1,7 +1,7 @@
 ---
 layout: page
 title: MyBatis
-menu: Framework
+menu: framework
 css: ['blog-page.css']
 permalink: /framework/mybatis
 ---

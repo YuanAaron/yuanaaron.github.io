@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Spring MVC
-menu: Framework
+menu: framework
 css: ['blog-page.css']
 permalink: /framework/springmvc
 ---

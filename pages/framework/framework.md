@@ -1,7 +1,7 @@
 ---
 layout: page
 title: 框架
-menu: Framework
+menu: framework
 css: ['blog-page.css']
 permalink: /framework/framework
 ---

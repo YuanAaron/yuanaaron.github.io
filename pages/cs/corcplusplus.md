@@ -1,7 +1,7 @@
 ---
 layout: page
 title: C/C++
-menu: CS
+menu: cs
 css: ['blog-page.css']
 permalink: /cs/corcplusplus
 ---

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: linux
-menu: CS
+menu: cs
 css: ['blog-page.css']
 permalink: /cs/linux
 ---

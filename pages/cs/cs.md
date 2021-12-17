@@ -1,7 +1,7 @@
 ---
 layout: page
 title: CS基础
-menu: CS
+menu: cs
 css: ['blog-page.css']
 permalink: /cs/cs
 ---

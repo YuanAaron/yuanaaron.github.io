@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Spring Boot
-menu: Framework
+menu: framework
 css: ['blog-page.css']
 permalink: /framework/springboot
 ---

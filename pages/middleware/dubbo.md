@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Netty/RPC/Dubbo
-menu: Middleware
+menu: middleware
 css: ['blog-page.css']
 permalink: /middleware/dubbo
 ---

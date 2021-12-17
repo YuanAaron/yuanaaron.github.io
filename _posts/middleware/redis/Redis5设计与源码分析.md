@@ -3,7 +3,7 @@ layout: post
 author: oshacker
 title: Redis5设计与源码分析
 category: redis
-tags: [geek,redis]
+tags: [middleware,redis]
 excerpt: 深入Redis底层原理
 ---
 

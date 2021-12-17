@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Concurrency
-menu: geektime
+menu: java
 css: ['blog-page.css']
 permalink: /java-all/concurrency
 ---

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: ELK
-menu: Middleware
+menu: middleware
 css: ['blog-page.css']
 permalink: /middleware/elk
 ---

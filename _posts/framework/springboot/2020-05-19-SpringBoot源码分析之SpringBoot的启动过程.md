@@ -2,8 +2,8 @@
 layout: post 
 author: oshacker
 title: SpringBoot源码分析之SpringBoot的启动过程
-category: spring-all
-tags: [java,spring-all]
+category: springboot
+tags: [framework,springboot]
 excerpt: Spring全家桶：第二篇
 ---
 

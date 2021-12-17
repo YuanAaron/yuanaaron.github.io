@@ -1,7 +1,7 @@
 ---
 layout: page
 title: ZK/Eureka/Apollo
-menu: Middleware
+menu: middleware
 css: ['blog-page.css']
 permalink: /middleware/zk
 ---

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: 中间件
-menu: Middleware
+menu: middleware
 css: ['blog-page.css']
 permalink: /middleware/middleware
 ---

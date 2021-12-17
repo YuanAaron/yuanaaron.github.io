@@ -3,7 +3,7 @@ layout: post
 author: oshacker
 title: Redis Debug
 category: redis
-tags: [geek,redis]
+tags: [middleware,redis]
 excerpt: 用gdb/vscode调试redis源码
 ---
 

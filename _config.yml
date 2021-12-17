@@ -26,7 +26,7 @@ plugins:
   - rouge
   - kramdown
   - jekyll-github-metadata
-  - jekyll-octicons
+  #- jekyll-octicons
   
 # Build settings
 markdown: kramdown
@@ -101,6 +101,9 @@ navs:
       - 
         subHref: /java-all/basic.html
         subLabel: 编程基础
+      - 
+        subHref: /java-all/concurrency.html
+        subLabel: 并发编程
       - 
         subHref: /java-all/jdk.html
         subLabel: JDK源码分析

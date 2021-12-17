@@ -3,7 +3,7 @@ layout: page
 title: TCP/IP协议栈
 menu: cs
 css: ['blog-page.css']
-permalink: /cs/network
+permalink: /cs/distribution
 ---
 
-{% include cs/network.html %}
+{% include cs/distribution.html %}
